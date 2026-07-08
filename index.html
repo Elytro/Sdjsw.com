@@ -1,1 +1,739 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <!-- Required Meta Tags Always Come First -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Title -->
+    <title>山东教师网,教师资格证考试,中小学教师招聘考试网</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- Meta tags -->
+    <meta name="keywords" content="山东教师招聘,山东教师招聘考试,山东教师招聘信息,山东教师招聘网,山东教师编制考试,山东教师招聘考试公告,教师考试笔试,山东教师招聘公告,山东教师招聘考试信息,山东教师编制招聘,山东特岗教师招聘,山东事业单位招聘">
+    <meta name="description" content="山东教师网(www.sdjsw.com)为您提供山东省教师资格网/教师招聘考试,中小学教师资格证考试,特岗教师考试公告,报名时间,报名入口,面试信息,试题资料等教师招聘真题,考试公告,语文,英语,数学,幼儿,音乐,美术,体育,信息技术等历年真题下载等教师招聘考试信息。包含历年真题,上岸备考资料,模拟真题押题卷。">
+    <!-- Open Graph -->
+    <meta property="og:title" content="山东教师网,教师资格证考试,中小学教师招聘考试网">
+    <meta property="og:type" content="WebSite">
+    <meta property="og:url" content="https://www.sdjsw.com/">
+    <meta property="og:image" content="https://apps.qtimg.com/assets/brand/873423b4a82f8e62.png">
+    <meta property="og:description" content="山东教师网(www.sdjsw.com)为您提供山东省教师资格网/教师招聘考试,中小学教师资格证考试,特岗教师考试公告,报名时间,报名入口,面试信息,试题资料等教师招聘真题,考试公告,语文,英语,数学,幼儿,音乐,美术,体育,信息技术等历年真题下载等教师招聘考试信息。包含历年真题,上岸备考资料,模拟真题押题卷。">
+    <meta property="og:site_name" content="山东教师网,教师资格证考试,中小学教师招聘考试网">
+    <link href="https://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://apps.bdimg.com/libs/fontawesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        /* ========== 全局样式 ========== */
+        body {
+            font-family: "Microsoft YaHei", "微软雅黑", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background: #fff;
+            color: #333;
+            -webkit-font-smoothing: antialiased;
+            padding-top: 56px;
+        }
+        a { color: #C91623; transition: color .2s; }
+        a:hover, a:focus { color: #a0121c; text-decoration: none; }
 
+        /* ========== 导航栏 ========== */
+        .navbar-sdjsw {
+            background: #fff;
+            border: none;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 0;
+            min-height: 60px;
+        }
+        .navbar-sdjsw .container { position: relative; }
+        .navbar-sdjsw .navbar-header { float: none; }
+        .navbar-sdjsw .navbar-brand {
+            font-size: 20px;
+            font-weight: 700;
+            color: #C91623 !important;
+            letter-spacing: 1px;
+            padding: 18px 0;
+            height: 60px;
+            line-height: 24px;
+            float: left;
+        }
+        .navbar-sdjsw .navbar-brand i { margin-right: 6px; }
+
+        /* 中部导航链接 */
+        .navbar-sdjsw .navbar-center { float: left; margin-left: 30px; }
+        .navbar-sdjsw .navbar-center > li { float: left; }
+        .navbar-sdjsw .navbar-center > li > a {
+            color: #555;
+            font-size: 14px;
+            padding: 19px 20px 18px;
+            line-height: 23px;
+            transition: all .2s;
+            position: relative;
+        }
+        .navbar-sdjsw .navbar-center > li > a::after {
+            content: '';
+            position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+            width: 0; height: 2px; background: #C91623;
+            transition: width .25s; border-radius: 1px;
+        }
+        .navbar-sdjsw .navbar-center > li > a:hover,
+        .navbar-sdjsw .navbar-center > li > a:focus {
+            color: #C91623; background: transparent;
+        }
+        .navbar-sdjsw .navbar-center > li > a:hover::after,
+        .navbar-sdjsw .navbar-center > li.active > a::after { width: 24px; }
+        .navbar-sdjsw .navbar-center > li.active > a {
+            color: #C91623 !important; background: transparent !important;
+        }
+
+        /* 右侧区域 */
+        .navbar-sdjsw .navbar-right-wrap {
+            float: right; padding-top: 11px;
+        }
+        .navbar-sdjsw .navbar-right-wrap .nav-search {
+            display: inline-block; position: relative; margin-right: 14px; vertical-align: middle;
+        }
+        .navbar-sdjsw .navbar-right-wrap .nav-search input {
+            width: 190px; height: 36px;
+            border: 1px solid #e8e8e8; border-radius: 20px;
+            padding: 0 34px 0 16px; font-size: 13px; color: #666;
+            background: #f9f9f9; outline: none;
+            transition: all .25s;
+        }
+        .navbar-sdjsw .navbar-right-wrap .nav-search input:focus {
+            width: 230px; border-color: #C91623; background: #fff;
+            box-shadow: 0 0 0 3px rgba(201,22,35,.06);
+        }
+        .navbar-sdjsw .navbar-right-wrap .nav-search button {
+            position: absolute; right: 2px; top: 2px;
+            width: 32px; height: 32px; border-radius: 50%;
+            border: none; background: transparent; color: #bbb;
+            font-size: 14px; outline: none; transition: color .2s;
+        }
+        .navbar-sdjsw .navbar-right-wrap .nav-search button:hover { color: #C91623; }
+        .navbar-sdjsw .navbar-right-wrap .nav-icon {
+            display: inline-block; vertical-align: middle;
+            width: 36px; height: 36px; line-height: 36px; text-align: center;
+            border-radius: 50%; color: #888; font-size: 17px;
+            margin-left: 2px; transition: all .2s; position: relative; cursor: pointer;
+        }
+        .navbar-sdjsw .navbar-right-wrap .nav-icon:hover { color: #C91623; background: #FFF0F0; }
+        .navbar-sdjsw .navbar-right-wrap .nav-icon .dot {
+            position: absolute; top: 6px; right: 6px;
+            width: 7px; height: 7px; border-radius: 50%; background: #C91623;
+        }
+        .navbar-sdjsw .navbar-right-wrap .btn-nav-login {
+            vertical-align: middle; margin-left: 6px;
+            padding: 7px 22px; border-radius: 20px;
+            border: 1px solid #C91623; background: transparent;
+            color: #C91623; font-size: 13px; transition: all .25s;
+        }
+        .navbar-sdjsw .navbar-right-wrap .btn-nav-login:hover { background: #C91623; color: #fff; }
+        .navbar-sdjsw .navbar-right-wrap .btn-nav-register {
+            vertical-align: middle; margin-left: 6px;
+            padding: 7px 22px; border-radius: 20px; font-size: 13px;
+        }
+        .navbar-sdjsw .navbar-right-wrap .btn-publish {
+            vertical-align: middle; margin-left: 6px;
+            padding: 7px 18px; border-radius: 20px; font-size: 13px;
+            background: #C91623; color: #fff; border: none; transition: all .25s;
+        }
+        .navbar-sdjsw .navbar-right-wrap .btn-publish:hover { background: #a0121c; }
+
+        /* 移动端图标行 */
+        .navbar-sdjsw .nav-mobile-actions { display: none; float: right; padding-top: 14px; }
+        .navbar-sdjsw .nav-mobile-actions a {
+            display: inline-block; width: 32px; height: 32px; line-height: 32px;
+            text-align: center; color: #888; font-size: 17px; margin-left: 4px;
+            border-radius: 50%; transition: all .2s;
+        }
+        .navbar-sdjsw .nav-mobile-actions a:hover { color: #C91623; background: #FFF0F0; }
+
+        /* 移动端折叠菜单内的搜索 */
+        .navbar-sdjsw .navbar-collapse .visible-xs-block { padding: 10px 15px; }
+        .navbar-sdjsw .navbar-collapse .visible-xs-block .mobile-search {
+            position: relative;
+        }
+        .navbar-sdjsw .navbar-collapse .visible-xs-block .mobile-search input {
+            width: 100%; height: 36px; border: 1px solid #e8e8e8; border-radius: 20px;
+            padding: 0 38px 0 16px; font-size: 13px; background: #f9f9f9; outline: none;
+        }
+        .navbar-sdjsw .navbar-collapse .visible-xs-block .mobile-search button {
+            position: absolute; right: 3px; top: 3px;
+            width: 30px; height: 30px; border-radius: 50%;
+            border: none; background: #C91623; color: #fff; font-size: 13px;
+        }
+        .navbar-sdjsw .navbar-collapse .visible-xs-block .mobile-actions {
+            margin-top: 10px; text-align: center;
+        }
+        .navbar-sdjsw .navbar-collapse .visible-xs-block .mobile-actions .btn {
+            margin: 0 4px; padding: 6px 20px; border-radius: 20px; font-size: 13px;
+        }
+
+        /* 响应式 */
+        @media (max-width: 991px) {
+            .navbar-sdjsw .navbar-center { margin-left: 10px; }
+            .navbar-sdjsw .navbar-center > li > a { padding: 19px 12px 18px; font-size: 13px; }
+            .navbar-sdjsw .navbar-right-wrap .nav-search input { width: 130px; }
+            .navbar-sdjsw .navbar-right-wrap .nav-search input:focus { width: 160px; }
+        }
+        @media (max-width: 767px) {
+            .navbar-sdjsw { min-height: 52px; }
+            .navbar-sdjsw .navbar-brand { font-size: 17px; padding: 14px 0; height: 52px; }
+            .navbar-sdjsw .navbar-center { display: none; }
+            .navbar-sdjsw .navbar-right-wrap { display: none; }
+            .navbar-sdjsw .nav-mobile-actions { display: block; }
+            .navbar-sdjsw .navbar-toggle { margin-top: 9px; margin-right: 0; }
+            /* 移动端折叠区 */
+            .navbar-sdjsw .navbar-collapse {
+                border-top: 1px solid #f0f0f0; box-shadow: 0 4px 12px rgba(0,0,0,.06);
+            }
+            .navbar-sdjsw .navbar-collapse .nav.navbar-nav {
+                margin: 0; padding: 4px 0;
+            }
+            .navbar-sdjsw .navbar-collapse .nav.navbar-nav > li > a {
+                padding: 11px 20px; color: #555; font-size: 14px;
+            }
+            .navbar-sdjsw .navbar-collapse .nav.navbar-nav > li.active > a {
+                color: #C91623 !important; background: #FFF8F8 !important;
+            }
+        }
+
+        /* ========== Hero 区域 ========== */
+        .hero-section {
+            background: linear-gradient(135deg, #C91623 0%, #E4393C 50%, #F56C6C 100%);
+            color: #fff;
+            padding: 70px 0 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 70%, rgba(255,255,255,.06) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 30%, rgba(255,255,255,.04) 0%, transparent 50%);
+        }
+        .hero-section .container { position: relative; z-index: 1; }
+        .hero-section h1 {
+            font-size: 38px;
+            font-weight: 700;
+            margin-bottom: 14px;
+            letter-spacing: 2px;
+        }
+        .hero-section p {
+            font-size: 16px;
+            opacity: .9;
+            margin-bottom: 30px;
+            max-width: 560px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+        .hero-section .form-inline {
+            display: inline-block;
+            background: #fff;
+            border-radius: 30px;
+            padding: 4px;
+            box-shadow: 0 4px 20px rgba(0,0,0,.15);
+        }
+        .hero-section .form-inline .form-control {
+            border: none;
+            box-shadow: none;
+            width: 280px;
+            height: 44px;
+            padding-left: 20px;
+            border-radius: 30px 0 0 30px;
+            font-size: 14px;
+        }
+        .hero-section .form-inline .btn {
+            border-radius: 0 30px 30px 0;
+            height: 44px;
+            padding: 0 28px;
+            font-size: 14px;
+            border: none;
+        }
+        @media (max-width: 767px) {
+            .hero-section { padding: 44px 0 40px; }
+            .hero-section h1 { font-size: 26px; }
+            .hero-section p { font-size: 14px; }
+            .hero-section .form-inline .form-control { width: 170px; }
+        }
+
+        /* ========== 通用区块 ========== */
+        .section { padding: 56px 0; }
+        .section-header { text-align: center; margin-bottom: 38px; }
+        .section-header h2 {
+            font-size: 26px;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 10px;
+        }
+        .section-header .divider {
+            display: block;
+            width: 42px;
+            height: 3px;
+            background: #C91623;
+            margin: 0 auto 12px;
+            border-radius: 2px;
+        }
+        .section-header p { color: #999; font-size: 14px; }
+
+        /* ========== 功能特性卡片 ========== */
+        .feature-card {
+            text-align: center;
+            padding: 32px 20px 24px;
+            transition: transform .3s, box-shadow .3s;
+            border-radius: 8px;
+        }
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 28px rgba(0,0,0,.08);
+        }
+        .feature-card .icon-circle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 68px;
+            height: 68px;
+            border-radius: 50%;
+            background: #FFF0F0;
+            color: #C91623;
+            font-size: 28px;
+            margin-bottom: 18px;
+        }
+        .feature-card h4 { font-size: 17px; font-weight: 600; color: #222; margin-bottom: 10px; }
+        .feature-card p { color: #888; font-size: 13px; line-height: 1.7; }
+
+        /* ========== 热门话题 / 帖子列表 ========== */
+        .topic-item {
+            padding: 16px 0;
+            border-bottom: 1px solid #f2f2f2;
+        }
+        .topic-item:last-child { border-bottom: none; }
+        .topic-item .topic-title {
+            font-size: 15px;
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 6px;
+            display: block;
+            transition: color .2s;
+        }
+        .topic-item .topic-title:hover { color: #C91623; }
+        .topic-item .topic-meta {
+            font-size: 12px;
+            color: #bbb;
+        }
+        .topic-item .topic-meta span { margin-right: 14px; }
+        .topic-item .topic-meta i { margin-right: 3px; }
+        .topic-badge {
+            display: inline-block;
+            font-size: 11px;
+            padding: 2px 8px;
+            border-radius: 3px;
+            margin-right: 8px;
+            font-weight: normal;
+        }
+        .badge-hot     { background: #FFF0F0; color: #C91623; }
+        .badge-quality { background: #FFF7E6; color: #E6A23C; }
+        .badge-new     { background: #ECF5FF; color: #409EFF; }
+
+        /* ========== 统计数字 ========== */
+        .stats-section { background: #fafafa; padding: 44px 0; }
+        .stat-item { text-align: center; padding: 16px 0; }
+        .stat-item .stat-num {
+            font-size: 38px;
+            font-weight: 700;
+            color: #C91623;
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+        .stat-item .stat-label { font-size: 13px; color: #999; }
+        @media (max-width: 767px) {
+            .stat-item .stat-num { font-size: 28px; }
+        }
+
+        /* ========== 底部 ========== */
+        .site-footer {
+            background: #fff;
+            border-top: 1px solid #eee;
+            padding: 28px 0 18px;
+            text-align: center;
+            font-size: 12px;
+            color: #bbb;
+        }
+        .site-footer .footer-links { margin-bottom: 10px; }
+        .site-footer .footer-links a {
+            color: #999;
+            margin: 0 10px;
+            transition: color .2s;
+        }
+        .site-footer .footer-links a:hover { color: #C91623; }
+        .site-footer .footer-links span { color: #ddd; }
+        .site-footer .beian { margin-top: 8px; line-height: 2; }
+        .site-footer .beian a { color: #bbb; }
+        .site-footer .beian a:hover { color: #666; }
+        .site-footer .beian img { margin-right: 4px; vertical-align: -1px; }
+    </style>
+</head>
+<body>
+
+<!-- ==================== 导航栏 ==================== -->
+<nav class="navbar navbar-sdjsw navbar-fixed-top" role="navigation">
+    <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand" href="/">
+            <i class="fa fa-graduation-cap"></i>山东教师网
+        </a>
+
+        <!-- 桌面端：中部导航链接 -->
+        <ul class="nav navbar-center hidden-xs">
+            <li class="active"><a href="/">首页</a></li>
+            <li><a href="#">学习资源</a></li>
+            <li><a href="#">工作分享</a></li>
+            <li><a href="#">话题广场</a></li>
+            <li><a href="#">教师圈</a></li>
+        </ul>
+
+        <!-- 桌面端：右侧功能区 -->
+        <div class="navbar-right-wrap hidden-xs">
+            <span class="nav-search">
+                <input type="text" placeholder="搜索资源、话题...">
+                <button type="button"><i class="fa fa-search"></i></button>
+            </span>
+            <a href="#" class="nav-icon" title="消息">
+                <i class="fa fa-bell-o"></i><span class="dot"></span>
+            </a>
+            <a href="#" class="nav-icon" title="私信">
+                <i class="fa fa-envelope-o"></i>
+            </a>
+            <button class="btn btn-nav-login" type="button">登录</button>
+            <button class="btn btn-danger btn-nav-register" type="button">注册</button>
+        </div>
+
+        <!-- 移动端：右侧图标 + 汉堡菜单 -->
+        <div class="nav-mobile-actions">
+            <a href="#" title="搜索"><i class="fa fa-search"></i></a>
+            <a href="#" title="消息"><i class="fa fa-bell-o"></i></a>
+        </div>
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+            <span class="sr-only">菜单</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
+        <!-- 移动端：折叠菜单 -->
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+            <!-- 移动端搜索栏 -->
+            <div class="visible-xs-block">
+                <div class="mobile-search">
+                    <input type="text" placeholder="搜索资源、话题...">
+                    <button type="button"><i class="fa fa-search"></i></button>
+                </div>
+                <div class="mobile-actions">
+                    <button class="btn btn-default btn-nav-login" type="button">登录</button>
+                    <button class="btn btn-danger btn-nav-register" type="button">注册</button>
+                </div>
+            </div>
+            <ul class="nav navbar-nav visible-xs">
+                <li class="active"><a href="/"><i class="fa fa-home"></i> 首页</a></li>
+                <li><a href="#"><i class="fa fa-folder-open-o"></i> 学习资源</a></li>
+                <li><a href="#"><i class="fa fa-share-alt"></i> 工作分享</a></li>
+                <li><a href="#"><i class="fa fa-comments-o"></i> 话题广场</a></li>
+                <li><a href="#"><i class="fa fa-users"></i> 教师圈</a></li>
+                <li><a href="#"><i class="fa fa-envelope-o"></i> 私信</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- ==================== Hero 搜索区 ==================== -->
+<section class="hero-section">
+    <div class="container">
+        <h1>山东教师学习·工作分享社区</h1>
+        <p>汇聚山东优秀教师，共享学习资料、教学心得与工作感悟，让每一位教师都不再孤单独行。</p>
+        <div class="form-inline">
+            <input type="text" class="form-control" placeholder="搜索学习资源、话题、教师...">
+            <button type="button" class="btn btn-danger"><i class="fa fa-search"></i> 搜索</button>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== 功能特性 ==================== -->
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <h2>为什么要加入教师搭子？</h2>
+            <span class="divider"></span>
+            <p>连接山东教师，让教学之路更有温度</p>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-md-3">
+                <div class="feature-card">
+                    <div class="icon-circle"><i class="fa fa-book"></i></div>
+                    <h4>学习资源库</h4>
+                    <p>海量教案、课件、试题等教学资源，按学科与学段精准分类，轻松找到所需。</p>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+                <div class="feature-card">
+                    <div class="icon-circle"><i class="fa fa-comments"></i></div>
+                    <h4>经验交流圈</h4>
+                    <p>与山东各地教师实时交流教学心得、班级管理技巧，共同成长进步。</p>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+                <div class="feature-card">
+                    <div class="icon-circle"><i class="fa fa-pencil-square-o"></i></div>
+                    <h4>工作日志</h4>
+                    <p>记录教学日常与工作反思，建立个人成长档案，见证专业发展每一步。</p>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+                <div class="feature-card">
+                    <div class="icon-circle"><i class="fa fa-users"></i></div>
+                    <h4>找搭子</h4>
+                    <p>按学科、地区精准匹配志同道合的教学伙伴，一起备课、教研、成长。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== 统计数据 ==================== -->
+<section class="stats-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-6 col-sm-3">
+                <div class="stat-item">
+                    <div class="stat-num">12,680</div>
+                    <div class="stat-label">已注册教师</div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-3">
+                <div class="stat-item">
+                    <div class="stat-num">8,520</div>
+                    <div class="stat-label">学习资源</div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-3">
+                <div class="stat-item">
+                    <div class="stat-num">36,200</div>
+                    <div class="stat-label">话题讨论</div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-3">
+                <div class="stat-item">
+                    <div class="stat-num">15,400</div>
+                    <div class="stat-label">成功组搭</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== 热门话题 + 资源推荐 ==================== -->
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <!-- 热门话题 -->
+            <div class="col-md-6">
+                <div class="section-header" style="text-align:left;">
+                    <h2>热门话题</h2>
+                    <span class="divider" style="margin-left:0;"></span>
+                </div>
+                <div>
+                    <!-- 话题1 -->
+                    <div class="topic-item">
+                        <a href="#" class="topic-title">
+                            <span class="topic-badge badge-hot">热门</span>山东省2026年教师职称评审最新政策解读
+                        </a>
+                        <div class="topic-meta">
+                            <span><i class="fa fa-user"></i> 济南·张老师</span>
+                            <span><i class="fa fa-eye"></i> 2.3k</span>
+                            <span><i class="fa fa-comment-o"></i> 186</span>
+                            <span><i class="fa fa-clock-o"></i> 2小时前</span>
+                        </div>
+                    </div>
+                    <!-- 话题2 -->
+                    <div class="topic-item">
+                        <a href="#" class="topic-title">
+                            <span class="topic-badge badge-quality">精华</span>小学语文新课标落地——我的课堂教学实践分享
+                        </a>
+                        <div class="topic-meta">
+                            <span><i class="fa fa-user"></i> 青岛·李老师</span>
+                            <span><i class="fa fa-eye"></i> 1.8k</span>
+                            <span><i class="fa fa-comment-o"></i> 142</span>
+                            <span><i class="fa fa-clock-o"></i> 5小时前</span>
+                        </div>
+                    </div>
+                    <!-- 话题3 -->
+                    <div class="topic-item">
+                        <a href="#" class="topic-title">
+                            <span class="topic-badge badge-new">新帖</span>初中数学大单元教学设计思路，欢迎交流
+                        </a>
+                        <div class="topic-meta">
+                            <span><i class="fa fa-user"></i> 潍坊·王老师</span>
+                            <span><i class="fa fa-eye"></i> 960</span>
+                            <span><i class="fa fa-comment-o"></i> 78</span>
+                            <span><i class="fa fa-clock-o"></i> 8小时前</span>
+                        </div>
+                    </div>
+                    <!-- 话题4 -->
+                    <div class="topic-item">
+                        <a href="#" class="topic-title">
+                            班主任如何与学生进行有效沟通？分享我的三个小技巧
+                        </a>
+                        <div class="topic-meta">
+                            <span><i class="fa fa-user"></i> 临沂·刘老师</span>
+                            <span><i class="fa fa-eye"></i> 720</span>
+                            <span><i class="fa fa-comment-o"></i> 55</span>
+                            <span><i class="fa fa-clock-o"></i> 12小时前</span>
+                        </div>
+                    </div>
+                    <!-- 话题5 -->
+                    <div class="topic-item">
+                        <a href="#" class="topic-title">
+                            暑期教师研修心得——关于核心素养培育的几点思考
+                        </a>
+                        <div class="topic-meta">
+                            <span><i class="fa fa-user"></i> 烟台·陈老师</span>
+                            <span><i class="fa fa-eye"></i> 580</span>
+                            <span><i class="fa fa-comment-o"></i> 42</span>
+                            <span><i class="fa fa-clock-o"></i> 昨天</span>
+                        </div>
+                    </div>
+                    <!-- 话题6 -->
+                    <div class="topic-item">
+                        <a href="#" class="topic-title">
+                            <span class="topic-badge badge-new">新帖</span>高中英语听说课活动设计经验总结
+                        </a>
+                        <div class="topic-meta">
+                            <span><i class="fa fa-user"></i> 淄博·孙老师</span>
+                            <span><i class="fa fa-eye"></i> 410</span>
+                            <span><i class="fa fa-comment-o"></i> 31</span>
+                            <span><i class="fa fa-clock-o"></i> 昨天</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 资源推荐 -->
+            <div class="col-md-6">
+                <div class="section-header" style="text-align:left;">
+                    <h2>学习资源推荐</h2>
+                    <span class="divider" style="margin-left:0;"></span>
+                </div>
+                <div>
+                    <div class="topic-item">
+                        <a href="#" class="topic-title">
+                            <span class="topic-badge badge-quality">精品</span>小学语文三年级下册全套教案与课件合集
+                        </a>
+                        <div class="topic-meta">
+                            <span><i class="fa fa-folder-o"></i> 语文</span>
+                            <span><i class="fa fa-download"></i> 3.2k</span>
+                            <span><i class="fa fa-star-o"></i> 4.9分</span>
+                        </div>
+                    </div>
+                    <div class="topic-item">
+                        <a href="#" class="topic-title">
+                            <span class="topic-badge badge-quality">精品</span>初中数学中考专题复习资料——函数与几何综合
+                        </a>
+                        <div class="topic-meta">
+                            <span><i class="fa fa-folder-o"></i> 数学</span>
+                            <span><i class="fa fa-download"></i> 2.6k</span>
+                            <span><i class="fa fa-star-o"></i> 4.8分</span>
+                        </div>
+                    </div>
+                    <div class="topic-item">
+                        <a href="#" class="topic-title">
+                            新教师入职必备：班主任工作手册（山东通用版）
+                        </a>
+                        <div class="topic-meta">
+                            <span><i class="fa fa-folder-o"></i> 综合</span>
+                            <span><i class="fa fa-download"></i> 2.1k</span>
+                            <span><i class="fa fa-star-o"></i> 4.7分</span>
+                        </div>
+                    </div>
+                    <div class="topic-item">
+                        <a href="#" class="topic-title">
+                            高中英语阅读理解专项训练（含详细解析）
+                        </a>
+                        <div class="topic-meta">
+                            <span><i class="fa fa-folder-o"></i> 英语</span>
+                            <span><i class="fa fa-download"></i> 1.5k</span>
+                            <span><i class="fa fa-star-o"></i> 4.7分</span>
+                        </div>
+                    </div>
+                    <div class="topic-item">
+                        <a href="#" class="topic-title">
+                            小学科学实验教学视频资源包（3-6年级）
+                        </a>
+                        <div class="topic-meta">
+                            <span><i class="fa fa-folder-o"></i> 科学</span>
+                            <span><i class="fa fa-download"></i> 1.2k</span>
+                            <span><i class="fa fa-star-o"></i> 4.6分</span>
+                        </div>
+                    </div>
+                    <div class="topic-item">
+                        <a href="#" class="topic-title">
+                            山东省教师招聘考试教育综合知识备考指南
+                        </a>
+                        <div class="topic-meta">
+                            <span><i class="fa fa-folder-o"></i> 教招</span>
+                            <span><i class="fa fa-download"></i> 980</span>
+                            <span><i class="fa fa-star-o"></i> 4.5分</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== 页脚 ==================== -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-links">
+            <a href="#">关于我们</a><span>|</span>
+            <a href="#">用户协议</a><span>|</span>
+            <a href="#">隐私政策</a><span>|</span>
+            <a href="#">联系我们</a><span>|</span>
+            <a href="#">帮助中心</a>
+        </div>
+        <p style="margin:0;color:#ccc;">Copyright &copy; 2026 山东教师网 Sdjsw.com 火山云计算.</p>
+        <div class="beian">
+            <a href="https://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
+                鲁ICP备2024092961号-27
+            </a>
+            <span style="margin:0 8px;color:#ddd;">|</span>
+            <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=37010000000000" target="_blank" rel="nofollow noopener">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24'%3E%3Cpath fill='%23bbb' d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm0-8h-2V7h2v2z'/%3E%3C/svg%3E" alt="公安备案图标">
+                鲁公网安备37131202371948号
+            </a>
+        </div>
+    </div>
+</footer>
+
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script>
+    // 导航栏滚动阴影效果
+    $(window).scroll(function () {
+        if ($(window).scrollTop() > 10) {
+            $('.navbar-sdjsw').css({ 'box-shadow': '0 2px 8px rgba(0,0,0,.06)' });
+        } else {
+            $('.navbar-sdjsw').css({ 'box-shadow': 'none' });
+        }
+    });
+
+    // 移动端菜单点击后自动收起
+    $('#navbar-collapse a').click(function () {
+        var $navbar = $('#navbar-collapse');
+        if ($navbar.hasClass('in')) {
+            $navbar.collapse('hide');
+        }
+    });
+</script>
+
+</body>
+</html>
