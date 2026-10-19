@@ -1,23 +1,653 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sdjsw.com</title>
-    <style>
-        body { font-family: -apple-system, "Segoe UI", sans-serif; display: flex;
-               min-height: 100vh; align-items: center; justify-content: center;
-               margin: 0; background: #f5f5f5; color: #333; }
-        .card { background: #fff; padding: 3rem 4rem; border-radius: 12px;
-                box-shadow: 0 4px 16px rgba(0,0,0,.08); text-align: center; }
-        h1 { margin: 0 0 .5rem; font-size: 1.6rem; }
-        p { margin: 0; color: #888; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="山东教师社群导航 — 汇集教师招聘考编、教师资格证、学科教研、班主任工作、职称评审等山东教师交流社群，实名加入，纯净沟通。">
+<meta name="keywords" content="山东教师,教师社群,教师招聘,教师资格证,学科教研,班主任,职称评审,济南教师,青岛教师">
+<meta name="author" content="sdjsw.com">
+<title>山东教师社群 · 山东教师网</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%232563eb'/><text x='16' y='23' font-size='18' text-anchor='middle' fill='white' font-family='sans-serif'>鲁</text></svg>">
+<link href="https://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://apps.bdimg.com/libs/fontawesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16181d;
+    --gray:#6b7280;
+    --gray-2:#9aa1ab;
+    --line:#ebedf0;
+    --accent:#2563eb;
+    --accent-dark:#1d4ed8;
+    --accent-soft:#f2f6ff;
+  }
+  *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+  html,body{background:#fff;color:var(--ink);}
+  body{
+    padding-top:64px;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+    font-size:15px;line-height:1.75;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+  }
+  a{color:var(--accent);text-decoration:none;-webkit-transition:color .18s ease;transition:color .18s ease;}
+  a:hover,a:focus{color:var(--accent-dark);text-decoration:none;}
+  h1,h2,h3,h4,h5{font-weight:600;letter-spacing:-.3px;color:var(--ink);}
+  p{margin:0 0 12px;}
+
+  /* ---------- 通用容器 ---------- */
+  .wrap{width:100%;max-width:1140px;margin:0 auto;padding:0 24px;}
+  .container{max-width:1140px;width:100%;}
+  .section{padding:96px 0;}
+  .section + .section{border-top:1px solid var(--line);}
+  .eyebrow{
+    font-size:11px;font-weight:600;letter-spacing:2.4px;text-transform:uppercase;
+    color:var(--accent);margin:0 0 14px;
+  }
+  .section-title{font-size:32px;line-height:1.35;margin:0 0 14px;letter-spacing:-.6px;}
+  .section-desc{color:var(--gray);font-size:16px;max-width:600px;margin:0 auto;}
+
+  /* ---------- 顶部进度条 ---------- */
+  #scrollBar{
+    position:fixed;top:0;left:0;height:2px;width:0;background:var(--accent);
+    z-index:2000;-webkit-transition:width .1s linear;transition:width .1s linear;
+  }
+
+  /* ---------- 导航 ---------- */
+  .navbar-min{
+    background:rgba(255,255,255,.86);border:0;border-bottom:1px solid transparent;
+    margin-bottom:0;border-radius:0;min-height:64px;
+    -webkit-backdrop-filter:saturate(180%) blur(12px);backdrop-filter:saturate(180%) blur(12px);
+    -webkit-transition:border-color .25s,box-shadow .25s,background .25s;
+    transition:border-color .25s,box-shadow .25s,background .25s;
+  }
+  .navbar-min.is-sticky{
+    background:rgba(255,255,255,.95);border-bottom-color:var(--line);
+    box-shadow:0 1px 20px rgba(20,25,40,.05);
+  }
+  .navbar-min .navbar-brand{
+    height:64px;line-height:34px;font-size:17px;font-weight:700;color:var(--ink);padding-left:0;letter-spacing:-.3px;
+  }
+  .navbar-min .navbar-brand .brand-mark{
+    display:inline-block;width:28px;height:28px;line-height:28px;text-align:center;
+    background:var(--accent);color:#fff;border-radius:8px;font-size:13px;margin-right:10px;
+  }
+  .navbar-min .navbar-brand:hover,.navbar-min .navbar-brand:focus{color:var(--ink);}
+  .navbar-min .nav > li > a{
+    color:var(--gray);padding:22px 15px;font-size:14px;position:relative;
+    -webkit-transition:color .18s;transition:color .18s;
+  }
+  .navbar-min .nav > li > a:after{
+    content:"";position:absolute;left:15px;right:15px;bottom:16px;height:2px;
+    background:var(--accent);border-radius:2px;
+    -webkit-transform:scaleX(0);transform:scaleX(0);-webkit-transform-origin:left;transform-origin:left;
+    -webkit-transition:-webkit-transform .22s ease;transition:transform .22s ease;
+  }
+  .navbar-min .nav > li > a:hover,.navbar-min .nav > li.active > a{color:var(--ink);background:transparent;}
+  .navbar-min .nav > li > a:hover:after,.navbar-min .nav > li.active > a:after{-webkit-transform:scaleX(1);transform:scaleX(1);}
+  .navbar-min .navbar-toggle{border:0;margin-top:15px;margin-right:0;padding:9px 0;}
+  .navbar-min .navbar-toggle .icon-bar{background:var(--ink);width:20px;height:2px;border-radius:2px;}
+  .navbar-min .navbar-toggle .icon-bar + .icon-bar{margin-top:4px;}
+  .navbar-min .navbar-collapse{border-color:var(--line);box-shadow:none;}
+  @media (max-width:767px){
+    .navbar-min .nav > li > a{padding:14px 0;}
+    .navbar-min .nav > li > a:after{display:none;}
+    .navbar-min .navbar-collapse{background:#fff;padding:0 0 8px;}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{position:relative;overflow:hidden;padding:104px 0 88px;text-align:center;}
+  .hero:before{
+    content:"";position:absolute;left:50%;top:-260px;width:900px;height:560px;margin-left:-450px;
+    background:radial-gradient(closest-side,rgba(37,99,235,.10),rgba(37,99,235,0) 70%);
+    pointer-events:none;
+  }
+  .hero:after{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background-image:linear-gradient(to right,rgba(20,25,40,.035) 1px,transparent 1px),
+                     linear-gradient(to bottom,rgba(20,25,40,.035) 1px,transparent 1px);
+    background-size:56px 56px;
+    -webkit-mask-image:radial-gradient(closest-side at 50% 30%,#000 30%,transparent 78%);
+    mask-image:radial-gradient(closest-side at 50% 30%,#000 30%,transparent 78%);
+  }
+  .hero .container{position:relative;z-index:2;}
+  .hero .badge-pill{
+    display:inline-block;font-size:12px;color:var(--accent-dark);background:var(--accent-soft);
+    border:1px solid rgba(37,99,235,.14);border-radius:999px;padding:5px 14px;margin-bottom:26px;
+    letter-spacing:.4px;
+  }
+  .hero h1{font-size:46px;line-height:1.32;margin:0 0 20px;letter-spacing:-1.2px;font-weight:700;}
+  .hero h1 em{font-style:normal;color:var(--accent);}
+  .hero .lead{font-size:17px;color:var(--gray);max-width:620px;margin:0 auto 36px;line-height:1.85;}
+  .hero-actions .btn{margin:0 6px;}
+  .btn-min{
+    border-radius:999px;padding:12px 30px;font-size:15px;font-weight:500;border:1px solid var(--accent);
+    -webkit-transition:all .2s ease;transition:all .2s ease;
+  }
+  .btn-accent{background:var(--accent);color:#fff;box-shadow:0 6px 18px rgba(37,99,235,.22);}
+  .btn-accent:hover,.btn-accent:focus{
+    background:var(--accent-dark);border-color:var(--accent-dark);color:#fff;
+    box-shadow:0 8px 24px rgba(37,99,235,.3);-webkit-transform:translateY(-1px);transform:translateY(-1px);
+  }
+  .btn-ghost{background:#fff;color:var(--ink);border-color:var(--line);}
+  .btn-ghost:hover,.btn-ghost:focus{background:#fff;color:var(--ink);border-color:#d7dbe0;box-shadow:0 6px 18px rgba(20,25,40,.06);}
+
+  .stats{margin-top:72px;padding-top:0;}
+  .stat{padding:0 8px;}
+  .stat-num{font-size:30px;font-weight:700;letter-spacing:-1px;line-height:1.2;}
+  .stat-num small{font-size:16px;font-weight:600;color:var(--gray-2);}
+  .stat-label{font-size:13px;color:var(--gray);margin-top:4px;}
+  @media (min-width:768px){
+    .stat + .stat{border-left:1px solid var(--line);}
+  }
+  @media (max-width:767px){
+    .stat{margin-bottom:24px;}
+    .stat:nth-child(odd){border-right:1px solid var(--line);}
+  }
+
+  /* ---------- 社群卡片 ---------- */
+  .row-flex{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;flex-wrap:wrap;}
+  .row-flex > [class*="col-"]{display:-webkit-box;display:-webkit-flex;display:flex;}
+  .grid{margin-top:52px;}
+  .grid > [class*="col-"]{margin-bottom:24px;}
+  .group-card{
+    width:100%;background:#fff;border:1px solid var(--line);border-radius:14px;padding:30px 28px 28px;
+    -webkit-transition:border-color .22s,box-shadow .22s,-webkit-transform .22s;
+    transition:border-color .22s,box-shadow .22s,transform .22s;
+  }
+  .group-card:hover{
+    border-color:rgba(37,99,235,.28);box-shadow:0 14px 34px rgba(20,25,40,.07);
+    -webkit-transform:translateY(-4px);transform:translateY(-4px);
+  }
+  .icon-mark{
+    width:42px;height:42px;border-radius:12px;background:var(--accent-soft);color:var(--accent);
+    display:block;text-align:center;line-height:42px;font-size:17px;margin-bottom:20px;
+    -webkit-transition:background .22s,color .22s;transition:background .22s,color .22s;
+  }
+  .group-card:hover .icon-mark{background:var(--accent);color:#fff;}
+  .group-card h4{font-size:17px;margin:0 0 8px;letter-spacing:-.2px;}
+  .group-card p{color:var(--gray);font-size:14px;line-height:1.75;margin:0 0 18px;min-height:50px;}
+  .tags{margin:0;padding:0;list-style:none;}
+  .tags li{
+    display:inline-block;font-size:12px;color:var(--gray);background:#f7f8fa;
+    padding:3px 10px;margin:0 6px 6px 0;border-radius:6px;
+  }
+  .group-card .more{
+    display:inline-block;font-size:13px;margin-top:6px;
+  }
+  .group-card .more .fa{font-size:11px;margin-left:4px;-webkit-transition:-webkit-transform .2s;transition:transform .2s;}
+  .group-card:hover .more .fa{-webkit-transform:translateX(3px);transform:translateX(3px);}
+
+  /* ---------- 步骤 ---------- */
+  .steps{margin-top:52px;}
+  .step{padding:0 20px 0 0;}
+  .step-no{
+    font-size:13px;font-weight:700;letter-spacing:1.5px;color:var(--accent);margin-bottom:14px;
+  }
+  .step-bar{height:2px;background:var(--line);border-radius:2px;margin-bottom:22px;position:relative;overflow:hidden;}
+  .step-bar i{position:absolute;left:0;top:0;height:100%;width:34%;background:var(--accent);border-radius:2px;}
+  .step h4{font-size:16px;margin:0 0 8px;}
+  .step p{font-size:14px;color:var(--gray);margin:0;}
+  @media (max-width:767px){.step{margin-bottom:34px;padding-right:0;}}
+
+  /* ---------- 公约 ---------- */
+  .rule-list{list-style:none;padding:0;margin:0;}
+  .rule-list li{
+    display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:flex-start;align-items:flex-start;
+    padding:18px 0;border-bottom:1px dashed var(--line);
+  }
+  .rule-list li:last-child{border-bottom:0;}
+  .rule-list .no{
+    -webkit-box-flex:0;flex:0 0 26px;width:26px;height:26px;line-height:26px;text-align:center;
+    border-radius:8px;background:#f7f8fa;color:var(--gray-2);font-size:12px;font-weight:700;margin-right:14px;margin-top:3px;
+  }
+  .rule-list .txt{font-size:14.5px;color:#3f454e;line-height:1.8;}
+  .rule-list .txt b{font-weight:600;color:var(--ink);}
+
+  /* ---------- FAQ ---------- */
+  .panel-min{border:0;border-radius:0;box-shadow:none;background:transparent;border-bottom:1px solid var(--line);}
+  .panel-min:first-child{border-top:1px solid var(--line);}
+  .panel-min > .panel-heading{background:transparent;border:0;padding:0;border-radius:0;}
+  .panel-min .panel-title{font-size:15.5px;font-weight:500;margin:0;}
+  .panel-min .panel-title > a{display:block;padding:20px 34px 20px 0;color:var(--ink);position:relative;}
+  .panel-min .panel-title > a:hover{color:var(--accent);}
+  .panel-min .panel-title .fa{
+    position:absolute;right:6px;top:22px;color:#c7ccd3;font-size:14px;
+    -webkit-transition:-webkit-transform .25s ease,color .25s ease;transition:transform .25s ease,color .25s ease;
+  }
+  .panel-min .panel-title > a[aria-expanded="true"]{color:var(--accent);}
+  .panel-min .panel-title > a[aria-expanded="true"] .fa{-webkit-transform:rotate(180deg);transform:rotate(180deg);color:var(--accent);}
+  .panel-min .panel-body{padding:0 34px 20px 0;color:var(--gray);font-size:14.5px;line-height:1.85;}
+
+  /* ---------- CTA ---------- */
+  .cta{padding:0 0 96px;}
+  .cta-box{
+    background:linear-gradient(180deg,#f4f8ff 0%,#eef4ff 100%);
+    border:1px solid rgba(37,99,235,.10);border-radius:20px;padding:64px 32px;text-align:center;
+  }
+  .cta-box h3{font-size:26px;margin:0 0 12px;letter-spacing:-.5px;}
+  .cta-box p{color:#5b6472;margin:0 0 28px;font-size:15.5px;}
+  .cta-box .btn{padding:13px 34px;}
+
+  /* ---------- Footer ---------- */
+  .footer{border-top:1px solid var(--line);padding:64px 0 32px;}
+  .footer .brand-min{font-size:16px;font-weight:700;color:var(--ink);display:block;margin-bottom:14px;letter-spacing:-.2px;}
+  .footer .brand-min .brand-mark{
+    display:inline-block;width:26px;height:26px;line-height:26px;text-align:center;
+    background:var(--accent);color:#fff;border-radius:7px;font-size:12px;margin-right:9px;
+  }
+  .footer .intro{font-size:13.5px;color:var(--gray);max-width:300px;line-height:1.85;}
+  .footer h5{font-size:12px;color:var(--ink);margin:0 0 18px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;}
+  .footer ul{list-style:none;padding:0;margin:0;}
+  .footer ul li{margin-bottom:11px;font-size:13.5px;}
+  .footer ul li a{color:var(--gray);}
+  .footer ul li a:hover{color:var(--accent);}
+  .footer-bottom{
+    margin-top:56px;padding-top:26px;border-top:1px solid var(--line);
+    display:-webkit-box;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;flex-wrap:wrap;
+    -webkit-box-align:center;align-items:center;
+  }
+  .copyright{font-size:13px;color:var(--gray-2);}
+  .beian{font-size:13px;color:var(--gray-2);}
+  .beian a{color:var(--gray);display:inline-block;}
+  .beian a:hover{color:var(--accent);}
+  .beian i.fa{color:#b6bcc5;margin-right:6px;font-size:12px;}
+  .beian .sep{color:#dfe3e8;margin:0 12px;}
+  .disclaimer{margin-top:16px;font-size:12px;color:#b6bcc5;}
+
+  /* ---------- 入场动画 ---------- */
+  .reveal{opacity:0;-webkit-transform:translateY(20px);transform:translateY(20px);}
+  .reveal.in{
+    opacity:1;-webkit-transform:none;transform:none;
+    -webkit-transition:opacity .7s cubic-bezier(.22,.68,.3,1),-webkit-transform .7s cubic-bezier(.22,.68,.3,1);
+    transition:opacity .7s cubic-bezier(.22,.68,.3,1),transform .7s cubic-bezier(.22,.68,.3,1);
+  }
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;-webkit-transform:none;transform:none;}}
+
+  /* ---------- 响应式 ---------- */
+  @media (max-width:991px){
+    .hero h1{font-size:38px;}
+    .section{padding:72px 0;}
+    .section-title{font-size:26px;}
+    .cta{padding-bottom:72px;}
+    .cta-box{padding:48px 24px;}
+  }
+  @media (max-width:767px){
+    body{padding-top:56px;}
+    .navbar-min{min-height:56px;}
+    .navbar-min .navbar-brand{height:56px;line-height:26px;}
+    .hero{padding:64px 0 56px;}
+    .hero h1{font-size:28px;letter-spacing:-.6px;}
+    .hero .lead{font-size:15px;}
+    .hero-actions .btn{display:block;margin:0 auto 12px;max-width:260px;}
+    .stats{margin-top:48px;}
+    .section{padding:56px 0;}
+    .section-title{font-size:23px;}
+    .section-desc{font-size:15px;}
+    .grid{margin-top:36px;}
+    .grid > [class*="col-"]{margin-bottom:16px;}
+    .group-card p{min-height:0;}
+    .footer{padding:48px 0 28px;}
+    .footer .col-xs-6{margin-bottom:28px;}
+    .footer-bottom{display:block;text-align:center;}
+    .beian{margin-top:10px;}
+    .beian .sep{display:none;}
+    .beian a{display:block;margin-bottom:6px;}
+  }
+</style>
 </head>
 <body>
-    <div class="card">
-        <h1>sdjsw.com</h1>
-        <p>Site initialized by oject.php</p>
+
+<div id="scrollBar"></div>
+
+<nav class="navbar navbar-min navbar-fixed-top" id="topNav">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainNav">
+        <span class="sr-only">切换导航</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#top"><span class="brand-mark">鲁</span>山东教师网</a>
     </div>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="active"><a href="#top">首页</a></li>
+        <li><a href="#groups">社群分类</a></li>
+        <li><a href="#join">加入方式</a></li>
+        <li><a href="#rules">社群公约</a></li>
+        <li><a href="#faq">常见问题</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="container">
+    <span class="badge-pill">覆盖山东 16 地市 · 实名制教师社群</span>
+    <h1>山东教师社群导航<br>找到属于你的<em>那一个圈子</em></h1>
+    <p class="lead">汇集教师招聘考编、教师资格证、学科教研、班主任工作与职称评审等交流社群。实名加入，纯净沟通，只聊教学与成长。</p>
+    <p class="hero-actions">
+      <a href="#groups" class="btn btn-min btn-accent">浏览社群</a>
+      <a href="#join" class="btn btn-min btn-ghost">加入我们</a>
+    </p>
+    <div class="row stats">
+      <div class="col-xs-6 col-sm-3 stat reveal">
+        <div class="stat-num">16</div>
+        <div class="stat-label">覆盖地市</div>
+      </div>
+      <div class="col-xs-6 col-sm-3 stat reveal" style="transition-delay:.08s">
+        <div class="stat-num">30<small>+</small></div>
+        <div class="stat-label">在运营社群</div>
+      </div>
+      <div class="col-xs-6 col-sm-3 stat reveal" style="transition-delay:.16s">
+        <div class="stat-num">8</div>
+        <div class="stat-label">学科教研方向</div>
+      </div>
+      <div class="col-xs-6 col-sm-3 stat reveal" style="transition-delay:.24s">
+        <div class="stat-num">52,000<small>+</small></div>
+        <div class="stat-label">在群教师</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="section" id="groups">
+  <div class="container">
+    <div class="text-center">
+      <p class="eyebrow">Community</p>
+      <h2 class="section-title">按需求找到合适的社群</h2>
+      <p class="section-desc">本站不涉及学科类线上培训场景和付费内容等盈利性服务，不提供涉及视听内容。</p>
+    </div>
+    <div class="row row-flex grid">
+      <div class="col-sm-6 col-md-4 reveal">
+        <div class="group-card">
+          <i class="fa fa-briefcase icon-mark"></i>
+          <h4>教师招聘 · 考编</h4>
+          <p>各地市招聘公告同步、笔试面试经验、备考资料互享。</p>
+          <ul class="tags"><li>济南</li><li>青岛</li><li>烟台</li><li>潍坊</li></ul>
+          <a class="more" href="#join">申请加入<i class="fa fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 reveal" style="transition-delay:.06s">
+        <div class="group-card">
+          <i class="fa fa-id-card-o icon-mark"></i>
+          <h4>教师资格证</h4>
+          <p>笔试科目、结构化面试、资格认定与普通话等级答疑。</p>
+          <ul class="tags"><li>笔试</li><li>面试</li><li>资格认定</li></ul>
+          <a class="more" href="#join">申请加入<i class="fa fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 reveal" style="transition-delay:.12s">
+        <div class="group-card">
+          <i class="fa fa-book icon-mark"></i>
+          <h4>学科教研</h4>
+          <p>语文、数学、英语、理化生、政史地分科教研与试题共创。</p>
+          <ul class="tags"><li>语文</li><li>数学</li><li>英语</li><li>更多</li></ul>
+          <a class="more" href="#join">申请加入<i class="fa fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 reveal">
+        <div class="group-card">
+          <i class="fa fa-users icon-mark"></i>
+          <h4>班主任 · 德育</h4>
+          <p>班级管理、家校沟通、学生心理辅导与德育案例交流。</p>
+          <ul class="tags"><li>班级管理</li><li>家校沟通</li></ul>
+          <a class="more" href="#join">申请加入<i class="fa fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 reveal" style="transition-delay:.06s">
+        <div class="group-card">
+          <i class="fa fa-line-chart icon-mark"></i>
+          <h4>职称评审 · 继续教育</h4>
+          <p>申报条件解读、材料准备、继续教育学时与年度考核交流。</p>
+          <ul class="tags"><li>一级教师</li><li>高级教师</li></ul>
+          <a class="more" href="#join">申请加入<i class="fa fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 reveal" style="transition-delay:.12s">
+        <div class="group-card">
+          <i class="fa fa-map-marker icon-mark"></i>
+          <h4>地市同城圈</h4>
+          <p>按地市划分的本地教师圈，组织线下教研与同城互助。</p>
+          <ul class="tags"><li>16 地市</li><li>同城活动</li></ul>
+          <a class="more" href="#join">申请加入<i class="fa fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="join">
+  <div class="container">
+    <div class="text-center">
+      <p class="eyebrow">How to join</p>
+      <h2 class="section-title">三步完成加入</h2>
+      <p class="section-desc">为确保社群质量，所有成员需完成实名认证，通常一个工作日内审核完成。</p>
+    </div>
+    <div class="row steps">
+      <div class="col-sm-4 step reveal">
+        <div class="step-no">STEP 01</div>
+        <div class="step-bar"><i></i></div>
+        <h4>选择社群</h4>
+        <p>根据学段、学科与所在城市，在社群分类中挑选合适的圈子。</p>
+      </div>
+      <div class="col-sm-4 step reveal" style="transition-delay:.08s">
+        <div class="step-no">STEP 02</div>
+        <div class="step-bar"><i style="width:67%"></i></div>
+        <h4>提交申请</h4>
+        <p>填写任教学校、学段学科等基本信息，提交至社群管理员审核。</p>
+      </div>
+      <div class="col-sm-4 step reveal" style="transition-delay:.16s">
+        <div class="step-no">STEP 03</div>
+        <div class="step-bar"><i style="width:100%"></i></div>
+        <h4>实名入群</h4>
+        <p>按「城市 + 学科 + 称呼」修改群名片，即可开始交流。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="rules">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5">
+        <p class="eyebrow">Rules</p>
+        <h2 class="section-title">社群公约</h2>
+        <p class="section-desc" style="margin-left:0;">干净的环境靠所有人共同维护，以下四条是社群底线。</p>
+      </div>
+      <div class="col-md-7">
+        <ul class="rule-list">
+          <li>
+            <span class="no">01</span>
+            <span class="txt"><b>实名准入。</b>仅限在职教师、师范在校生及教育从业者加入，进群需完成实名认证。</span>
+          </li>
+          <li>
+            <span class="no">02</span>
+            <span class="txt"><b>纯净交流。</b>禁止广告、刷屏、微商、课程推销及任何外部引流链接。</span>
+          </li>
+          <li>
+            <span class="no">03</span>
+            <span class="txt"><b>尊重隐私。</b>不发布学生个人信息，不发表不当言论与地域攻击内容。</span>
+          </li>
+          <li>
+            <span class="no">04</span>
+            <span class="txt"><b>尊重原创。</b>分享资料请注明来源，未经授权不转载付费资源。</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="text-center">
+          <p class="eyebrow">FAQ</p>
+          <h2 class="section-title">常见问题</h2>
+          <p class="section-desc" style="margin-bottom:44px;">没找到答案？可在群内联系管理员咨询。</p>
+        </div>
+        <div class="panel-group" id="faqList">
+          <div class="panel panel-min">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#faqList" href="#faq1">加入社群需要收费吗？<i class="fa fa-angle-down"></i></a>
+              </h4>
+            </div>
+            <div id="faq1" class="panel-collapse collapse in">
+              <div class="panel-body">所有社群均为免费公益性交流组织，不收取任何入群费、资料费或会员费。如遇到以社群名义收费的行为，请及时向管理员举报。</div>
+            </div>
+          </div>
+          <div class="panel panel-min">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#faqList" href="#faq2">非在编教师或代课老师可以加入吗？<i class="fa fa-angle-down"></i></a>
+              </h4>
+            </div>
+            <div id="faq2" class="panel-collapse collapse">
+              <div class="panel-body">可以。只要当前从事教育教学相关工作（含代课教师、培训机构教师、师范在校生），均可申请加入对应社群，申请时如实填写即可。</div>
+            </div>
+          </div>
+          <div class="panel panel-min">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#faqList" href="#faq3">一个人可以加入多个社群吗？<i class="fa fa-angle-down"></i></a>
+              </h4>
+            </div>
+            <div id="faq3" class="panel-collapse collapse">
+              <div class="panel-body">可以，建议不超过 3 个。请根据自身学段与学科选择最贴近的社群，避免重复占用名额，把位置留给真正需要的同行。</div>
+            </div>
+          </div>
+          <div class="panel panel-min">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#faqList" href="#faq4">如何申请成为管理员或新建分科社群？<i class="fa fa-angle-down"></i></a>
+              </h4>
+            </div>
+            <div id="faq4" class="panel-collapse collapse">
+              <div class="panel-body">在群内联系管理员提交意向，需提供在职证明与拟运营方向说明。新社群需满足 20 人以上联名申请方可开设。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <div class="cta-box reveal">
+      <h3>准备好加入山东教师社群了吗？</h3>
+      <p>选择你的学科与城市，认识一群认真教书的人。</p>
+      <a href="#groups" class="btn btn-min btn-accent">立即选择社群</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-4">
+        <span class="brand-min"><span class="brand-mark">鲁</span>山东教师网</span>
+        <p class="intro">sdjsw.com 是一个面向山东教师的公益性社群导航站点，致力于连接同行、共享教研资源。</p>
+      </div>
+      <div class="col-xs-4 col-sm-4 col-md-2 col-md-offset-2">
+        <h5>社群</h5>
+        <ul>
+          <li><a href="#groups">招聘考编</a></li>
+          <li><a href="#groups">教师资格</a></li>
+          <li><a href="#groups">学科教研</a></li>
+          <li><a href="#groups">地市同城</a></li>
+        </ul>
+      </div>
+      <div class="col-xs-4 col-sm-4 col-md-2">
+        <h5>关于</h5>
+        <ul>
+          <li><a href="#rules">社群公约</a></li>
+          <li><a href="#join">加入方式</a></li>
+          <li><a href="#faq">常见问题</a></li>
+          <li><a href="#top">意见反馈</a></li>
+        </ul>
+      </div>
+      <div class="col-xs-4 col-sm-4 col-md-2">
+        <h5>联系</h5>
+        <ul>
+          <li><a href="#top">投稿合作</a></li>
+          <li><a href="#top">管理员申请</a></li>
+          <li><a href="#top">违规举报</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="col-sm-6 copyright" style="padding-left:0;">
+        © 2026 山东教师网 sdjsw.com 版权所有
+      </div>
+      <div class="col-sm-6 beian" style="padding-right:0;text-align:right;">
+        <a href="https://beian.miit.gov.cn/" target="_blank" rel="nofollow">鲁ICP备2024092961号-27</a>
+        <span class="sep">·</span>
+        <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=37130202373077" target="_blank" rel="nofollow">
+          <i class="fa fa-shield"></i>鲁公网安备37130202373077号
+        </a>
+      </div>
+      <p class="disclaimer col-xs-12" style="padding-left:0;">本站为教师自发交流平台，所有内容仅代表作者个人观点，与任何机构无关。</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script>
+  $(function () {
+    var navHeight = $('#topNav').outerHeight();
+
+    /* 平滑滚动 */
+    $('a[href^="#"]').on('click', function () {
+      var id = $(this).attr('href');
+      var $target = $(id);
+      if ($target.length) {
+        $('html, body').animate({ scrollTop: $target.offset().top - navHeight + 1 }, 500, 'swing');
+        $('.navbar-collapse.in').collapse('hide');
+        return false;
+      }
+    });
+
+    /* 滚动：导航态 + 顶部进度条 */
+    $(window).on('scroll', function () {
+      var top = $(this).scrollTop();
+      $('#topNav').toggleClass('is-sticky', top > 10);
+      var max = $(document).height() - $(this).height();
+      $('#scrollBar').css('width', (max > 0 ? (top / max) * 100 : 0) + '%');
+    }).trigger('scroll');
+
+    /* 导航高亮 */
+    $(window).on('scroll', function () {
+      var fromTop = $(this).scrollTop() + navHeight + 80;
+      var current = null;
+      $('#mainNav a[href^="#"]').each(function () {
+        var $section = $($(this).attr('href'));
+        if ($section.length && $section.offset().top <= fromTop) current = this;
+      });
+      $('#mainNav li').removeClass('active');
+      if (current) $(current).parent().addClass('active');
+    }).trigger('scroll');
+
+    /* 入场动画 */
+    var $reveal = $('.reveal');
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+      $reveal.each(function () { io.observe(this); });
+    } else {
+      $reveal.addClass('in');
+    }
+  });
+</script>
 </body>
 </html>
